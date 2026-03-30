@@ -24,7 +24,7 @@ export default function NewsletterSignup() {
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-white mb-2">Join the Hub</h2>
         <p className="text-blue-100 mb-6">
-          Weekly tech tutorials, campus life stories, and event highlights.
+          Weekly tech tutorials, campus life stories, and event highlights delivered to your inbox.
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -51,7 +51,7 @@ export default function NewsletterSignup() {
         {status === 'success' && (
           <div className="mt-4 flex items-center justify-center gap-2 text-green-100">
             <Check size={18} />
-            <span>Thanks for subscribing!</span>
+            <span>Thanks for subscribing! Check your email.</span>
           </div>
         )}
 
@@ -61,6 +61,10 @@ export default function NewsletterSignup() {
             <span>Something went wrong. Try again.</span>
           </div>
         )}
+
+        <p className="text-xs text-blue-200 mt-4">
+          We respect your privacy. Unsubscribe anytime.
+        </p>
       </div>
     </section>
   );

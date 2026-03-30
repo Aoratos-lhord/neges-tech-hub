@@ -33,6 +33,10 @@ body {
   border-radius: 5px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
 .prose {
   @apply font-serif text-gray-700;
 }
@@ -50,4 +54,15 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
 }

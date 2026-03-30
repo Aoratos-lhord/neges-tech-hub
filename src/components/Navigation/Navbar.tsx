@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-blue-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-blue-600 rounded-lg flex items-center justify-center group-hover:shadow-lg transition-shadow">
               <span className="text-white font-bold text-lg">Ⓝ</span>
             </div>
             <span className="font-bold text-xl text-brand-dark hidden sm:inline">
@@ -44,6 +44,7 @@ export default function Navbar() {
             <button
               onClick={() => setSearchOpen(!searchOpen)}
               className="p-2 hover:bg-gray-100 rounded-lg transition"
+              aria-label="Search"
             >
               <Search size={20} />
             </button>
@@ -51,6 +52,7 @@ export default function Navbar() {
             <button
               onClick={toggleDarkMode}
               className="p-2 hover:bg-gray-100 rounded-lg transition"
+              aria-label="Dark mode"
             >
               {darkMode ? (
                 <Sun size={20} className="text-yellow-500" />
@@ -62,6 +64,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden p-2"
+              aria-label="Menu"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

@@ -1,5 +1,10 @@
 import { create } from 'zustand';
-import { Article, Tag, EventImage, GalleryFilter } from '../types';
+import { Article, Tag, EventImage } from '../types';
+
+interface GalleryFilter {
+  category?: string;
+  dateRange?: { start: string; end: string };
+}
 
 interface Store {
   articles: Article[];
@@ -49,8 +54,3 @@ export const useStore = create<Store>((set) => ({
   darkMode: false,
   toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
 }));
-
-interface GalleryFilter {
-  category?: string;
-  dateRange?: { start: string; end: string };
-}

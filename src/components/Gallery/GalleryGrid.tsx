@@ -29,7 +29,10 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
 
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
               <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-bold">{image.title}</p>
+                <p className="font-bold text-sm">{image.title}</p>
+                <p className="text-xs text-gray-300">
+                  {new Date(image.date).toLocaleDateString()}
+                </p>
               </div>
             </div>
           </div>
@@ -55,7 +58,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
             {currentIndex > 0 && (
               <button
                 onClick={() => setSelectedImage(images[currentIndex - 1])}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white rounded-full"
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white rounded-full hover:bg-gray-200"
               >
                 <ChevronLeft size={24} />
               </button>
@@ -64,11 +67,15 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
             {currentIndex < images.length - 1 && (
               <button
                 onClick={() => setSelectedImage(images[currentIndex + 1])}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white rounded-full"
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white rounded-full hover:bg-gray-200"
               >
                 <ChevronRight size={24} />
               </button>
             )}
+
+            <div className="absolute bottom-4 right-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm">
+              {currentIndex + 1} / {images.length}
+            </div>
           </div>
         </div>
       )}
